@@ -1,53 +1,53 @@
 [project]
-name    = "lua370-app"
+name = "lua370-app"
 version = "1.0.0-dev"
-type    = "application"
+type = "application"
 
 [build]
-cflags = ["-O0", "-DLUA_USE_C89", "-DLUA_USE_JUMPTABLE=0"]
+cflags = ["-DLUA_USE_C89", "-DLUA_USE_JUMPTABLE=0"]
 
 [mvs.build.datasets.source]
-suffix   = "SOURCE"
-dsorg    = "PO"
-recfm    = "FB"
-lrecl    = 80
-blksize  = 19040
-space    = ["TRK", 10, 5, 10]
+suffix = "SOURCE"
+dsorg = "PO"
+recfm = "FB"
+lrecl = 80
+blksize = 19040
+space = ["TRK", 10, 5, 10]
 
 [mvs.build.datasets.punch]
-suffix   = "OBJECT"
-dsorg    = "PO"
-recfm    = "FB"
-lrecl    = 80
-blksize  = 19040
-space    = ["TRK", 5, 2, 5]
+suffix = "OBJECT"
+dsorg = "PO"
+recfm = "FB"
+lrecl = 80
+blksize = 19040
+space = ["TRK", 5, 2, 5]
 
 [mvs.build.datasets.ncalib]
-suffix   = "NCALIB"
-dsorg    = "PO"
-recfm    = "U"
-lrecl    = 0
-blksize  = 19069
-space    = ["TRK", 10, 5, 5]
+suffix = "NCALIB"
+dsorg = "PO"
+recfm = "U"
+lrecl = 0
+blksize = 19069
+space = ["TRK", 10, 5, 5]
 
 [mvs.build.datasets.syslmod]
-suffix   = "LOAD"
-dsorg    = "PO"
-recfm    = "U"
-lrecl    = 0
-blksize  = 19069
-space    = ["TRK", 100, 25, 5]
+suffix = "LOAD"
+dsorg = "PO"
+recfm = "U"
+lrecl = 0
+blksize = 19069
+space = ["TRK", 100, 25, 5]
 
 [dependencies]
 "mvslovers/crent370" = ">=1.0.4"
-"mvslovers/lua370"   = ">=1.0.1"
+"mvslovers/lua370" = ">=1.0.1"
 
 # --- Load Modules ------------------------------------------------
 
 # Lua stand-alone interpreter
 [[link.module]]
-name    = "LUA"
-entry   = "@@CRT0"
+name = "LUA"
+entry = "@@CRT0"
 options = ["SIZE=(4000K,40K)", "LIST", "MAP", "XREF", "RENT"]
 include = ["@@CRT1", "LUA"]
 
@@ -56,8 +56,8 @@ include = ["@@CRT1", "LUA"]
 
 # Lua compiler (bytecode)
 [[link.module]]
-name    = "LUAC"
-entry   = "@@CRT0"
+name = "LUAC"
+entry = "@@CRT0"
 options = ["SIZE=(4000K,40K)", "LIST", "MAP", "XREF", "RENT"]
 include = ["@@CRT1", "LUAC"]
 
