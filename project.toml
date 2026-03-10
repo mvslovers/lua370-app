@@ -28,7 +28,7 @@ dsorg    = "PO"
 recfm    = "U"
 lrecl    = 0
 blksize  = 19069
-space    = ["TRK", 5, 2, 5]
+space    = ["TRK", 10, 5, 5]
 
 [mvs.build.datasets.syslmod]
 suffix   = "LOAD"
@@ -36,7 +36,7 @@ dsorg    = "PO"
 recfm    = "U"
 lrecl    = 0
 blksize  = 19069
-space    = ["TRK", 5, 2, 5]
+space    = ["TRK", 100, 25, 5]
 
 [dependencies]
 "mvslovers/crent370" = ">=1.0.4"
